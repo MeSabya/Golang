@@ -252,8 +252,52 @@ func main() {
     fmt.Printf("%f\n", price)
 }
 ```
+</details>
 
+<details>
+	<summary>Fix the code-3</summary>
 
+Given the definition of worker below, what is the right syntax to start a goroutine that will call worker and send the result to a channel named ch?
+
+func worker(m Message) Result
+
+```go
+package main
+
+import "fmt"
+
+type Message struct {
+	Text string
+}
+
+type Result struct {
+	ResultText string
+}
+
+func worker(m Message) Result {
+	// Some processing...
+	return Result{ResultText: "Processed: " + m.Text}
+}
+
+func main() {
+	// Create a channel
+	ch := make(chan Result)
+
+	// Create a Message
+	message := Message{Text: "Hello, World!"}
+
+	// Start a goroutine to call worker and send the result to the channel
+	go func() {
+		result := worker(message)
+		ch <- result
+		close(ch) // Close the channel when done sending
+	}()
+
+	// Retrieve the result from the channel
+	result := <-ch
+	fmt.Println(result.ResultText)
+}
+```
 </details>
 
 
