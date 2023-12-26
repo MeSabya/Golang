@@ -53,6 +53,31 @@ This will initialize a Go module for your project.
 
 Remember, Go is flexible, and you have the freedom to organize your code the way that makes sense for your project. The Go module approach provides more flexibility in terms of project organization and dependency management.
 
+### How can you tell Go to import a package from a different location?
+
+In Go, you can use the import statement to import packages from different locations. By default, Go imports packages from the Go module specified in the go.mod file or from the standard library. However, you can specify a different import path for a package if it is hosted in a different location (e.g., a different repository or a custom server).
+
+To import a package from a different location, you need to provide the full import path in your source code. The import path is a unique identifier for a package that includes the module name and the path within the module where the package is located.
+
+Here's the general syntax:
+
+```go
+import "module/path/package"
+``
+Here's an example:
+
+```go
+// Importing a package from a different location
+import "github.com/example/mylibrary/mypackage"
+```
+In this example, github.com/example/mylibrary is the module path, and mypackage is the path within the module where the package is located.
+
+If the package is not part of a Go module, you can use the full URL of the repository:
+
+```go
+// Importing a package from a GitHub repository
+import "github.com/example/mylibrary/mypackage"
+```
 </details>
 
 
@@ -142,6 +167,60 @@ func main() {
 ```
 So, the accessibility of MyVar or myVar depends on whether the first letter of the identifier is uppercase (exported) or lowercase (unexported) and whether it is being accessed from within or outside the package.
 </details>
+
+
+<details>
+    <summary> Fix the code-1 </summary>
+    
+```go
+type Point struct {
+  x int
+  y int
+}
+ 
+func main() {
+  data := []byte(`{"x":1, "y": 2}`)
+  var p Point
+  if err := json.Unmarshal(data, &p); err != nil {
+    fmt.Println("error: ", err)
+  } else {
+    fmt.Println(p)
+  }
+}
+
+This code printed {0, 0}. How can you fix it?
+```
+
+The issue with the provided code is related to the visibility of the fields in the Point struct. In Go, fields with a lowercase initial letter (e.g., x and y) are unexported and not accessible outside the package where the struct is defined.
+
+```go
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+)
+
+type Point struct {
+	X int `json:"x"`
+	Y int `json:"y"`
+}
+
+func main() {
+	data := []byte(`{"x":1, "y": 2}`)
+	var p Point
+
+	if err := json.Unmarshal(data, &p); err != nil {
+		fmt.Println("error:", err)
+	} else {
+		fmt.Println(p)
+	}
+}
+```
+    
+</details>
+
+
 
 
 
