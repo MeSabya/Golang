@@ -1,3 +1,8 @@
+<details>
+<summary>How a golang code project structure should look like</summary>
+
+## How a golang code project structure should look like
+
 In Go, the recommended location for your Go source code is within the Go workspace. The Go workspace typically has the following directory structure:
 
 ```lua
@@ -47,6 +52,10 @@ go mod init myproject
 This will initialize a Go module for your project.
 
 Remember, Go is flexible, and you have the freedom to organize your code the way that makes sense for your project. The Go module approach provides more flexibility in terms of project organization and dependency management.
+
+</details>
+
+## 
 
 
 
