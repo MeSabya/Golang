@@ -220,7 +220,41 @@ func main() {
     
 </details>
 
+<details>
+	<summary>Fix the code-2</summary>
+	What will be printed in this code?
 
+```go
+var stocks map[string]float64 // stock -> price
+price := stocks["MSFT"]
+fmt.Printf("%f\n", price)
+```
+       
+The provided code will result in a runtime panic. This is because the stocks map is declared but not initialized before attempting to access the value associated with the key "MSFT".
+
+In Go, a map is a reference type, and it must be initialized before use. The zero value of a map is nil, and attempting to access a key in a nil map results in a runtime panic.
+
+To fix this issue, you need to initialize the stocks map before attempting to access its values. Here's an example:
+
+```go
+package main
+
+import "fmt"
+
+func main() {
+    var stocks map[string]float64 // stock -> price
+
+    // Initialize the map before using it
+    stocks = make(map[string]float64)
+
+    // Accessing the value for the key "MSFT"
+    price := stocks["MSFT"]
+    fmt.Printf("%f\n", price)
+}
+```
+
+
+</details>
 
 
 
