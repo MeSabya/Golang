@@ -10,6 +10,7 @@
 - [Sort Slice of Strings by Length](https://github.com/MeSabya/Golang/blob/main/000.Slice/00.%20Sort%20Slice%20of%20Strings%20by%20Length.md)
 - [Append Function in Golang](https://github.com/MeSabya/Golang/blob/main/000.Slice/01.%20Understanding%20Append%20function%20in%20slice.md)
 - [Quizes on slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/02.%20MoreSliceQuizes.md)
+- [Can you use slice as a key in a map](https://github.com/MeSabya/Golang/blob/main/000.Slice/03.Can%20you%20use%20slice%20as%20a%20key%20in%20a%20map.md)
 
 ## 
 
