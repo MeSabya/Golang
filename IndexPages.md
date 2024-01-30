@@ -24,3 +24,6 @@
 - [method overloading in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/02.%20Method%20Overloading%20in%20Go.md)
 - [How can you achieve code reuse and polymorphism in Go without using classical inheritance?](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/03.%20How%20can%20you%20achieve%20code%20reuse%20and%20polymorphism%20in%20Go%20without%20using%20classical%20inheritance.md)
 - [TypeAssertionVsTypeSwitch](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/04.%20TypeAssertionVsTypeSwitch.md)
+
+## Map in golang
+- [Why use empty struct as a value in a map, what is the significance?](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/00.%20Declaration%20and%20Initialization.md#why-use-empty-struct-as-a-value-in-a-map-what-is-the-significance)
