@@ -28,3 +28,13 @@
 
 ## Map in golang
 - [Why use empty struct as a value in a map, what is the significance?](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/00.%20Declaration%20and%20Initialization.md#why-use-empty-struct-as-a-value-in-a-map-what-is-the-significance)
+
+## Interface
+- [Interfaces on variables do not distinguish between values or pointers](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/02.%20Implementation%20of%20Interfaces.md)
+- [Empty Interface](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/03.%20Empty%20Interface.md)
+- [Type switch](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/01.%20The%20Type%20Switch.md)
+- [Make a stack using empty interface](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/06.%20Make%20a%20Stack%20with%20Variable%20Internal%20Types.md)
+
+## Reflect package
+- [Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
+- 
