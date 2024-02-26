@@ -11,6 +11,7 @@
 - [Append Function in Golang](https://github.com/MeSabya/Golang/blob/main/000.Slice/01.%20Understanding%20Append%20function%20in%20slice.md)
 - [Quizes on slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/02.%20MoreSliceQuizes.md)
 - [Can you use slice as a key in a map](https://github.com/MeSabya/Golang/blob/main/000.Slice/03.Can%20you%20use%20slice%20as%20a%20key%20in%20a%20map.md)
+- [sort.Sort vs sort.Slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/04.%20sort.Sort%20vs%20sort.Slice.md#sortsort-vs-sortslice)
 
 ## io packages (Reading and Writing)
 - [Reading Input From User](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/00.%20Reading%20Input%20From%20User.md)
