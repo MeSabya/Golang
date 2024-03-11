@@ -66,3 +66,11 @@
 
 ## Context in Golang
 - []
+
+## Concurrency
+- [ParallelSumOfSquares](https://github.com/MeSabya/Golang/blob/main/10.%20Tricky%20Questions/00.%20ParallelSumOfSquares.md)
+- [Implementing Goroutines](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/01.%20Implementing%20Goroutines.md)
+- [Channels](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/02.%20Channels.md)
+- [Golang Closure](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/03.%20Golang%20Closure.md)
+
+
