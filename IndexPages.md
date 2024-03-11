@@ -55,3 +55,8 @@
 - [Panicking in a User-Defined Package](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/02.%20Panicking%20in%20a%20User-Defined%20Package.md)
 - [Error-Handling Scheme with Closures](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/03.%20Error-Handling%20Scheme%20with%20Closures.md)
 
+## OOPs in Golang
+- [Method Overloading in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/02.%20Method%20Overloading%20in%20Go.md)
+- [How can you achieve code reuse and polymorphism in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/03.%20How%20can%20you%20achieve%20code%20reuse%20and%20polymorphism%20in%20Go%20without%20using%20classical%20inheritance.md)
+- [TypeAssertionVsTypeSwitch](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/04.%20TypeAssertionVsTypeSwitch.md)
+- 
