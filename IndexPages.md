@@ -37,4 +37,21 @@
 
 ## Reflect package
 - [Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
-- 
+- [Basics of Reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/04.%20ReflectPackage.md)
+- [ Printf and Reflection](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/05.%20Printf%20and%20Reflection.md)
+- [Quiz on Reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/07.%20Quiz.md)
+
+## Reading And Writing
+- [Reading Input From User](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/00.%20Reading%20Input%20From%20User.md)
+- [Reading from a file](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/03.%20Reading%20From%20a%20file.md)
+- [Writing to a file](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/04.%20Writing%20to%20a%20File.md)
+- [bufio Vs ioutil](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/06.%20bufio%20vs%20ioutil.md)
+- [bufio.NewReader Vs bufio.NewScanner](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/07.%20bufio.NewReader%20Vs%20bufio.NewScanner.md)
+- [bufio with strings](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/08.%20bufio%20with%20strings.md)
+
+## Error Handling in Golang
+- [Error Handling Basics](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/00.%20Error-Handling.md)
+- [What is recover() function?](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/01.%20Run-time%20Exceptions%20and%20Panic.md#go-panicking)
+- [Panicking in a User-Defined Package](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/02.%20Panicking%20in%20a%20User-Defined%20Package.md)
+- [Error-Handling Scheme with Closures](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/03.%20Error-Handling%20Scheme%20with%20Closures.md)
+
