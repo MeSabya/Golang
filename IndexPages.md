@@ -73,6 +73,10 @@
 - [Channels](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/02.%20Channels.md)
 - [Golang Closure](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/03.%20Golang%20Closure.md)
 - [Concurrency with project](https://blog.devgenius.io/concurrency-with-sample-project-in-golang-297400beb0a4)
+
+## Troubleshooting in Golang
+- [stack trace](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md)
+- [init function](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md#why-init-function-here)
 - 
 
 
