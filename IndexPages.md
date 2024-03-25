@@ -80,6 +80,8 @@
 - [Non Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/00.%20Non%20Blocking%20Queue.md)
 - [Semaphore Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/02.%20Semaphore.md)
 - [Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/01.%20BlockingQueue.md)
+- [Concurrent Grep in Golang](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/ConcurrentGrep.md)
+- [File system change notification](https://github.com/souvikhaldar/file-change/blob/main/main.go)
 
 ## Troubleshooting in Golang
 - [stack trace](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md)
