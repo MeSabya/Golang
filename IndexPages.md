@@ -28,6 +28,7 @@
 
 ## Map in golang
 - [Why use empty struct as a value in a map, what is the significance?](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/00.%20Declaration%20and%20Initialization.md#why-use-empty-struct-as-a-value-in-a-map-what-is-the-significance)
+- [Comparable types in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/02.%20Comparable%20Types%20in%20Golang.md)
 
 ## Interface
 - [Interfaces on variables do not distinguish between values or pointers](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/02.%20Implementation%20of%20Interfaces.md)
