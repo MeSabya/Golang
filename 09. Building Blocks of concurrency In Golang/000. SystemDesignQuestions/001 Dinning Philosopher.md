@@ -99,5 +99,11 @@ func main() {
 
 }
 ```
+## Why dp.lifecycleOfPhilosopher(id) needs to be inside goroutine?
+
+The function dp.lifecycleOfPhilosopher(id) needs to be inside a goroutine because it simulates the behavior of each philosopher concurrently. 
+The Dining Philosophers problem is a classic example of a concurrency problem, and to simulate multiple philosophers eating and thinking concurrently, you need to run each philosopher's
+lifecycle in a separate goroutine.
+
 ## Explanation of the above is here
 https://github.com/MeSabya/PythonConcurrency-/blob/master/DinningPhilosopher/DiningPhilosopher.md 
