@@ -99,3 +99,5 @@ func main() {
 
 }
 ```
+## Explanation of the above is here
+https://github.com/MeSabya/PythonConcurrency-/blob/master/DinningPhilosopher/DiningPhilosopher.md 
