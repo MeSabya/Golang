@@ -1,0 +1,133 @@
+```golang
+package main
+
+import (
+	"fmt"
+	"math/rand"
+	"sync"
+	"time"
+)
+
+type NonBlockingQ struct {
+	q            []int
+	maxSize      int
+	lock         sync.Mutex
+	qWaitingPuts []*chan int
+	qWaitingGets []*chan int
+}
+
+func NewNonBlockingQ(size int) *NonBlockingQ {
+	return &NonBlockingQ{
+		maxSize: size,
+		q:       make([]int, 0),
+	}
+}
+
+func (q *NonBlockingQ) EnQueue(val int) chan int {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+
+	if q.maxSize == len(q.q) {
+		fmt.Println("Queue is Full")
+		ch := make(chan int)
+		q.qWaitingPuts = append(q.qWaitingPuts, &ch)
+		return ch
+	}
+	q.q = append(q.q, val)
+
+	if len(q.qWaitingGets) > 0 {
+		ch := q.qWaitingGets[0]
+		q.qWaitingGets = q.qWaitingGets[1:]
+		*ch <- val
+	}
+
+	return nil
+}
+
+func (q *NonBlockingQ) DeQueue() (int, chan int) {
+	q.lock.Lock()
+	defer q.lock.Unlock()
+
+	if len(q.q) != 0 {
+		item := q.q[0]
+		q.q = q.q[1:]
+
+		if len(q.qWaitingPuts) > 0 {
+			ch := q.qWaitingPuts[0]
+			q.qWaitingPuts = q.qWaitingPuts[1:]
+			*ch <- 1
+		}
+		return item, nil
+	}
+
+	ch := make(chan int)
+	q.qWaitingGets = append(q.qWaitingGets, &ch)
+	return 0, ch
+}
+
+func retryEnque(ch <-chan int, val int, q *NonBlockingQ) {
+	<-ch
+	fmt.Println("Retry Enque Invoked ")
+	newCh := q.EnQueue(val)
+	if newCh != nil {
+		go retryEnque(newCh, val, q)
+	} else {
+		fmt.Printf("\nitem %d successfully added on a retry\n", val)
+	}
+
+}
+
+func retryDeque(ch <-chan int) {
+	item := <-ch
+	fmt.Println("Retry Deque Invoked consumed item", item)
+}
+
+func Producer(q *NonBlockingQ) {
+	item := 1
+	for {
+		ch := q.EnQueue(item)
+		if ch != nil {
+			go retryEnque(ch, item, q)
+		}
+		item++
+		time.Sleep(time.Duration(rand.Intn(3)+1) * time.Second)
+	}
+}
+
+func Consumer(q *NonBlockingQ) {
+	for {
+
+		item, ch := q.DeQueue()
+		if ch != nil {
+			go retryDeque(ch)
+		} else {
+			fmt.Printf("\nConsumer consumed item %d\n", item)
+		}
+
+		time.Sleep(time.Second)
+	}
+}
+
+func main() {
+	q := NewNonBlockingQ(2)
+	//go Producer(q)
+	//go Consumer(q)
+
+	//time.Sleep(15 * time.Second)
+	
+	var wg sync.WaitGroup
+	wg.Add(2)
+	
+	go func(){
+		defer wg.Done()
+		Producer(q)
+	}
+	
+	go func(){
+		defer wg.Done()
+		Consumer(q)
+	}
+	
+	wg.Wait()	
+}
+```
