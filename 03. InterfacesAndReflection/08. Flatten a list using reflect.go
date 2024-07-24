@@ -41,6 +41,15 @@ func FlattenList(L []interface{}) []interface{} {
 	return result
 }
 
+/*
+In Go, type assertions are used to convert an interface type to a specific type. The expression nestedList.([]interface{}) is 
+a type assertion that converts nestedList from the empty interface type interface{} to a slice of interface{} ([]interface{}).
+
+This is necessary because interface{} can hold any value of any type, but we need to explicitly tell the compiler that we 
+expect nestedList to be a slice of interface{} so that we can iterate over it. Without this type assertion, the compiler does 
+not know the underlying type of nestedList.
+*/
+
 func FlattenList2(slice []interface{}) []interface{} {
 	var result []interface{}
 
