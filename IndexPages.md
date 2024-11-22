@@ -4,7 +4,6 @@
    - Indicating the index of a substring or character in a string
    - [sort a string on golang](https://github.com/MeSabya/Golang/blob/main/01.Strings/01.%20StringBasics.md#sort-a-string-in-go)
    - [Inserting Slice in a Slice](https://github.com/MeSabya/Golang/blob/main/01.Strings/04.%20Inserting%20Slice%20in%20a%20Slice.md)
-     
 
 ## Slice 
 - [Sort Slice of Strings by Length](https://github.com/MeSabya/Golang/blob/main/000.Slice/00.%20Sort%20Slice%20of%20Strings%20by%20Length.md)
@@ -12,6 +11,10 @@
 - [Quizes on slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/02.%20MoreSliceQuizes.md)
 - [Can you use slice as a key in a map](https://github.com/MeSabya/Golang/blob/main/000.Slice/03.Can%20you%20use%20slice%20as%20a%20key%20in%20a%20map.md)
 - [sort.Sort vs sort.Slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/04.%20sort.Sort%20vs%20sort.Slice.md#sortsort-vs-sortslice)
+- [Slice Quiz](https://github.com/MeSabya/Golang/blob/main/01.Strings/09.%20Quiz.md)
+- [Misc Questions](https://github.com/MeSabya/Golang/blob/main/01.Strings/07.%20append.md)
+- [Inserting Slice in a Slice](https://github.com/MeSabya/Golang/blob/main/01.Strings/04.%20Inserting%20Slice%20in%20a%20Slice.md)
+- 
 
 ## io packages (Reading and Writing)
 - [Reading Input From User](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/00.%20Reading%20Input%20From%20User.md)
@@ -20,6 +23,8 @@
 - [Writing to a file](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/04.%20Writing%20to%20a%20File.md)
 - [Read CSV File](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/05.%20Read%20CSV%20File.md)
 - [Bufio Vs ioutil packages in Go](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/06.%20bufio%20vs%20ioutil.md)
+- [Merge a number of files where each file has sorted words in it. Write the merged output to a output file.](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/10.FileOperations%20in%20Golang%20Vs%20Python.md)
+- [bufio with strings](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/08.%20bufio%20with%20strings.md)
 
 ## OOPs Concepts in Go
 - [method overloading in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/02.%20Method%20Overloading%20in%20Go.md)
@@ -29,12 +34,14 @@
 ## Map in golang
 - [Why use empty struct as a value in a map, what is the significance?](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/00.%20Declaration%20and%20Initialization.md#why-use-empty-struct-as-a-value-in-a-map-what-is-the-significance)
 - [Comparable types in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/02.%20Comparable%20Types%20in%20Golang.md)
+- [Ordered Dict in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/01.%20Ordered%20Dict%20in%20golang.go)
 
 ## Interface
 - [Interfaces on variables do not distinguish between values or pointers](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/02.%20Implementation%20of%20Interfaces.md)
 - [Empty Interface](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/03.%20Empty%20Interface.md)
 - [Type switch](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/01.%20The%20Type%20Switch.md)
 - [Make a stack using empty interface](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/06.%20Make%20a%20Stack%20with%20Variable%20Internal%20Types.md)
+- [Quiz](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/07.%20Quiz.md)
 
 ## Reflect package
 - [Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
@@ -55,6 +62,7 @@
 - [What is recover() function?](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/01.%20Run-time%20Exceptions%20and%20Panic.md#go-panicking)
 - [Panicking in a User-Defined Package](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/02.%20Panicking%20in%20a%20User-Defined%20Package.md)
 - [Error-Handling Scheme with Closures](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/03.%20Error-Handling%20Scheme%20with%20Closures.md)
+- [What happens if a goroutine panics](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/05.%20What%20happens%20if%20a%20goroutine%20panics.md)
 
 ## OOPs in Golang
 - [Method Overloading in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/02.%20Method%20Overloading%20in%20Go.md)
@@ -84,9 +92,24 @@
 - [Concurrent Grep in Golang](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/ConcurrentGrep.md)
 - [File system change notification](https://github.com/souvikhaldar/file-change/blob/main/main.go)
 
+## Design Questions
+- [Token Bucket Ratelimiter](https://github.com/MeSabya/Golang/blob/main/09.%20Building%20Blocks%20of%20concurrency%20In%20Golang/000.%20SystemDesignQuestions/000%20RateLimitingAlgorithm.md)
+- [Producer Consumer Problem with backpressure](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/05.%20Producer%20Consumer%20Problem%20with%20backpressure.md)
+- [ThreadsafeDefferredCallback](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/04.%20ThreadsafeDefferredCallback.md)
+- [Design a load balancer](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/00.%20Design%20a%20load%20balancer.md)
+- [DEsign a JSON Parser](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/03.%20Design%20a%20JsonParser.md)
+- [SOLID Principles Discussion](https://github.com/MeSabya/Golang/tree/main/17.%20DesignQuestions/00.%20SOLID%20Principles)
+
 ## Troubleshooting in Golang
 - [stack trace](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md)
 - [init function](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md#why-init-function-here)
-- 
 
+## Ginko/Gomega Testing
+- [Ginko Gomega basics](https://github.com/MeSabya/Golang/blob/main/21.%20UnitTestingFW/00.GinkoAndGomega/00.%20Basics.md)
 
+## Miscellaneous questions 
+- [Merge Jsons](https://github.com/MeSabya/Golang/blob/main/10.%20Tricky%20Questions/04.%20MergeJsons.md)
+
+## Scenario Based questions
+
+## Concurrency Pattern
