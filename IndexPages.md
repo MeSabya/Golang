@@ -111,5 +111,13 @@
 - [Merge Jsons](https://github.com/MeSabya/Golang/blob/main/10.%20Tricky%20Questions/04.%20MergeJsons.md)
 
 ## Scenario Based questions
+- [How would you implement graceful shutdown for your Go application? Can you walk through a potential implementation?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#2-graceful-shutdown-or-for-select-done-idiom)
+- [How would you fix the data race in this scenario? Can you demonstrate different ways to synchronize access to the shared counter?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#10-data-race-in-goroutines)
+- [How would you design your Go code to allow for easy mocking and testing of external services?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#9-interfacing-and-dependency-injection)
+- [How would you approach performance optimization in Go? What tools or techniques would you use to identify bottlenecks?
+Follow-up: Can you describe how the Go runtime handles memory management (e.g., garbage collection) and how it can impact performance?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#6-performance-optimization)
+
+- [What could be causing the memory leak? How would you troubleshoot and fix it?
+Follow-up: How can you prevent goroutine leaks in the future?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#3-memory-management-and-goroutines)
 
 ## Concurrency Pattern
