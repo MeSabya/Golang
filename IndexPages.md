@@ -99,6 +99,7 @@
 - [Design a load balancer](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/00.%20Design%20a%20load%20balancer.md)
 - [DEsign a JSON Parser](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/03.%20Design%20a%20JsonParser.md)
 - [SOLID Principles Discussion](https://github.com/MeSabya/Golang/tree/main/17.%20DesignQuestions/00.%20SOLID%20Principles)
+- [Design a LRU Cache](https://github.com/MeSabya/Golang/blob/main/00.%20DataStructure%20and%20Algo%20in%20Golang/listInGolang.md)
 
 ## Troubleshooting in Golang
 - [stack trace](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md)
@@ -121,3 +122,6 @@ Follow-up: Can you describe how the Go runtime handles memory management (e.g., 
 Follow-up: How can you prevent goroutine leaks in the future?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#3-memory-management-and-goroutines)
 
 ## Concurrency Pattern
+- [Pipeline Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/01.%20PipelinePattern/00.%20PipelinePattern.md)
+- [Workerpool Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/00.Worker%20Pool%20Pattern.md)
+- [Fanout FanIn Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/02.%20FanoutFanin.md)
