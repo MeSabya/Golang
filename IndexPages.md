@@ -100,6 +100,7 @@
 - [DEsign a JSON Parser](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/03.%20Design%20a%20JsonParser.md)
 - [SOLID Principles Discussion](https://github.com/MeSabya/Golang/tree/main/17.%20DesignQuestions/00.%20SOLID%20Principles)
 - [Design a LRU Cache](https://github.com/MeSabya/Golang/blob/main/00.%20DataStructure%20and%20Algo%20in%20Golang/listInGolang.md)
+- Design a hash map
 
 ## Troubleshooting in Golang
 - [stack trace](https://github.com/MeSabya/Golang/blob/main/16.%20TroubleShoot/00.%20Stacktrace.md)
