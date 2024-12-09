@@ -300,5 +300,52 @@ func main() {
 ```
 </details>
 
+### what is meaning of this []int(nil) 
+<details>
+	<Summary>Answer</Summary>
+nil is the zero value for reference types in Go (pointers, slices, maps, channels, and interfaces).
+[]int(nil) explicitly converts nil to a slice of type []int. This ensures that the type of the slice is clear, even though the slice itself is nil.
 
+## Why Use []int(nil)?
+
+- To initialize a nil slice explicitly.
+- To reset a slice to its nil value.
+- To create a slice with a specific type without allocating memory.
+
+## Usage Examples:
+### 1. Resetting a Slice:
+
+```go
+var slice []int = []int{1, 2, 3}
+fmt.Println(slice) // Output: [1 2 3]
+
+// Reset the slice to nil
+slice = []int(nil)
+fmt.Println(slice) // Output: []
+fmt.Println(slice == nil) // Output: true
+```
+Here, []int(nil) explicitly sets slice to a nil slice of type []int.
+
+### 2. Deep Copy of a Slice:
+The expression append([]int(nil), originalSlice...) is a common idiom for creating a deep copy of a slice:
+
+[]int(nil) creates a new empty slice of type []int without any underlying array.
+append([]int(nil), originalSlice...) copies all elements of originalSlice into a new slice.
+Example:
+
+```go
+original := []int{1, 2, 3}
+
+// Create a deep copy
+copy := append([]int(nil), original...)
+copy[0] = 99
+
+fmt.Println("Original:", original) // Output: Original: [1 2 3]
+fmt.Println("Copy:", copy)         // Output: Copy: [99 2 3]
+```
+Here, modifying copy does not affect original because append creates a new underlying array for the new slice.
+
+![image](https://github.com/user-attachments/assets/e3606c8a-662a-4dc1-bf3b-1f264b81d3e9)
+
+</details>
 
