@@ -349,3 +349,41 @@ Here, modifying copy does not affect original because append creates a new under
 
 </details>
 
+### Deadlock Example
+<details>
+	<summary>Deadlock Example</summary>
+	```golang
+	package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+func main() {
+	tasks := make(chan int)
+	var wg sync.WaitGroup
+
+	// Start a consumer
+	wg.Add(1)
+	go func() {
+		defer wg.Done()
+		for task := range tasks {
+			fmt.Println("Processing task:", task)
+		}
+		fmt.Println("Consumer done")
+	}()
+
+	// Producer sends tasks
+	tasks <- 1
+	tasks <- 2
+	// Producer waits for the consumer to finish
+	wg.Wait() // Deadlock! Channel is not closed, consumer waits forever.
+	close(tasks)
+}
+```
+This is classic chicken egg problem , where producer waits for consumer to finish their consumption.
+While consumers are waiting on tasks to consume more, since channel is not closed.
+</details>
+
+
