@@ -381,8 +381,18 @@ func main() {
 	close(tasks)
 }
 ```
-This is classic chicken egg problem , where producer waits for consumer to finish their consumption.
-While consumers are waiting on tasks to consume more, since channel is not closed.
+#### Why Deadlock Happens
+- The consumer is stuck waiting for more tasks because the channel isn't closed.
+- The producer is stuck waiting for the consumer to finish because wg.Wait() is called before close(tasks).
+
+#### Fix
+Move close(tasks) before wg.Wait():
+
+```go
+close(tasks) // Signal no more tasks
+wg.Wait()    // Wait for the consumer to finish
+```
+This ensures the consumer can exit its loop and the program proceeds without deadlock.
 </details>
 
 
