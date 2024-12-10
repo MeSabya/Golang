@@ -353,14 +353,12 @@ Here, modifying copy does not affect original because append creates a new under
 <details>
 	<summary>Deadlock Example</summary>
 	
-	```go
-	package main
-
+```go
+package main
 import (
 	"fmt"
 	"sync"
 )
-
 func main() {
 	tasks := make(chan int)
 	var wg sync.WaitGroup
