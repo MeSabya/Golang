@@ -352,7 +352,7 @@ Here, modifying copy does not affect original because append creates a new under
 ### Deadlock Example
 <details>
 	<summary>Deadlock Example</summary>
-	```golang
+	```go
 	package main
 
 import (
