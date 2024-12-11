@@ -395,4 +395,74 @@ wg.Wait()    // Wait for the consumer to finish
 This ensures the consumer can exit its loop and the program proceeds without deadlock.
 </details>
 
+## What is the difference between a package and a module in Go?
+<details>
+	<summary>Answer Me </summary>
+
+### Package
+- Definition: A package is a way to organize and group related Go source files.
+- Purpose: Provides modularity and reusability within a Go project.
+
+#### Characteristics:
+
+A package is defined by a directory containing .go source files with the same package declaration at the top of each file.
+Packages are the primary unit of code reuse in Go.
+Each package has a name, and it is used to control visibility (e.g., exported functions, types, and variables start with an uppercase letter).
+The standard library consists of many built-in packages like fmt, net/http, etc.
+Example:
+
+```go
+// math.go
+package math
+
+func Add(a, b int) int {
+    return a + b
+}
+```
+
+👉 Usage:
+
+```go
+Copy code
+import "math"
+
+func main() {
+    result := math.Add(2, 3)
+    fmt.Println(result) // Outputs: 5
+}
+```
+
+### Module
+- Definition: A module is a collection of related packages with versioning and dependency management.
+- Purpose: Facilitates dependency management and enables sharing and versioning of packages across projects.
+
+#### Characteristics:
+- Introduced in Go 1.11 as part of Go's module system.
+- Defined by a go.mod file at the root of the module directory.
+- Specifies the module's path (often a repository URL) and tracks dependencies and their versions.
+
+Example: A go.mod file might look like this:
+
+```go
+module github.com/user/myproject
+
+go 1.20
+
+require (
+    github.com/sirupsen/logrus v1.8.1
+)
+```
+
+👉 Usage:
+
+Modules enable you to download and manage dependencies using commands like:
+
+```bash
+go mod init    # Initialize a new module
+go mod tidy    # Add missing and remove unused dependencies
+go get         # Add or update dependencies
+```
+</details>
+
+
 
