@@ -462,6 +462,9 @@ go mod init    # Initialize a new module
 go mod tidy    # Add missing and remove unused dependencies
 go get         # Add or update dependencies
 ```
+
+![image](https://github.com/user-attachments/assets/4d99ed48-c592-4c28-8d4a-837a4982ec6f)
+
 </details>
 
 
