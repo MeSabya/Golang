@@ -91,6 +91,7 @@
 - [Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/01.%20BlockingQueue.md)
 - [Concurrent Grep in Golang](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/ConcurrentGrep.md)
 - [File system change notification](https://github.com/souvikhaldar/file-change/blob/main/main.go)
+- [Atomic and Once in Sync](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/02.%20SingletonDesignPattern.md)
 
 ## Design Questions
 - [Token Bucket Ratelimiter](https://github.com/MeSabya/Golang/blob/main/09.%20Building%20Blocks%20of%20concurrency%20In%20Golang/000.%20SystemDesignQuestions/000%20RateLimitingAlgorithm.md)
