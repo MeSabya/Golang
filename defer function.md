@@ -137,6 +137,104 @@ func A() {
 ![image](https://github.com/user-attachments/assets/e4cb0a63-8950-43a5-b433-0244a479eb34)
 
 
+## Defer types: Heap-allocated, Stack-allocated and Open-coded 
+### Heap-Allocated Defer
+- Description: When a defer statement is complex, such as when it's used in a loop or involves closures, the deferred call is allocated on the heap.
+- Use Case: Happens when the number of defer calls or their lifetimes cannot be determined at compile time.
 
+#### Example1: Using defer inside the loop
+```go
+func heapAllocatedDefer() {
+	for i := 0; i < 10; i++ {
+		defer fmt.Println("Deferred in loop:", i) // Cannot be optimized due to dynamic loop behavior.
+	}
+}
+```
+#### Example2: Using a Closure in defer
+```go
+func deferWithClosure() {
+	message := "Hello"
+	defer func() {
+		fmt.Println("Deferred with closure:", message)
+	}()
+	message = "World"
+}
+```
+#### Dynamic defer Calls
+When the arguments or function being deferred are determined dynamically, Go must allocate the deferred call on the heap.
 
+Example:
+
+```go
+func deferDynamicCall(flag bool) {
+	var message string
+	if flag {
+		message = "Dynamic defer: true"
+	} else {
+		message = "Dynamic defer: false"
+	}
+
+	defer fmt.Println(message)
+}
+```
+#### defer Inside a Nested Function
+When a defer is used in a nested function, the compiler often allocates it on the heap.
+
+Example:
+
+```go
+func deferInNestedFunction() {
+	innerFunc := func(msg string) {
+		defer fmt.Println("Deferred in nested function:", msg)
+	}
+	innerFunc("Hello, nested!")
+}
+```
+#### Defer in a Goroutine
+When defer is used inside a goroutine, the deferred call is heap-allocated because the execution context spans a separate goroutine.
+
+Example:
+
+```go
+func deferInGoroutine() {
+	go func() {
+		defer fmt.Println("Deferred in goroutine")
+	}()
+}
+```
+![image](https://github.com/user-attachments/assets/1ac94151-5bc4-4a77-8081-f0014f327b76)
+
+### Stack-Allocated Defer
+Description: If the defer call is simple and the compiler can guarantee it will be executed in the same function context, it can be allocated on the stack.
+Use Case: Applies to straightforward, non-looped defer calls.
+Performance: More efficient because no heap allocation or garbage collection is involved.
+Example:
+
+```go
+func stackAllocatedDefer() {
+	defer fmt.Println("Simple defer")
+	fmt.Println("Doing something")
+}
+```
+Explanation:
+
+The compiler optimizes the defer since it knows exactly when and where it will execute.
+The defer call is managed using the stack, avoiding heap overhead.
+
+### Open-Coded Defer
+Description: In Go 1.20 and later, simple defer calls in certain functions may be inlined or "open-coded." This optimization avoids any runtime defer mechanism by directly inserting the deferred call at the end of the function.
+Use Case: Applies to trivial defer calls where there is no looping or closure involved, and the function body is small.
+Performance: Fastest because it eliminates the runtime cost of managing a defer call entirely.
+Example:
+
+```go
+func openCodedDefer() {
+	defer fmt.Println("Open-coded defer")
+	fmt.Println("Hello, world!")
+}
+```
+Explanation:
+
+- The compiler inserts the fmt.Println("Open-coded defer") call directly before the function return.
+- This avoids both stack and heap allocation, leading to zero runtime overhead for defer.
 
