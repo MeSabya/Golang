@@ -42,6 +42,7 @@
 - [Type switch](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/01.%20The%20Type%20Switch.md)
 - [Make a stack using empty interface](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/06.%20Make%20a%20Stack%20with%20Variable%20Internal%20Types.md)
 - [Quiz](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/07.%20Quiz.md)
+- [Why does a nil interface not always equal nil in Go?](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/10.%20nil%20interface.md)
 
 ## Reflect package
 - [Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
