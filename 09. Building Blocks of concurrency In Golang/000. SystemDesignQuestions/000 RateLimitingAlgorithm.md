@@ -100,6 +100,141 @@ func main() {
 - Race Conditions: Without locking, simultaneous access to possibleTokens could lead to race conditions, causing incorrect token counts and inconsistent behavior.
 - Atomicity: The lock ensures that token bucket operations (checking and modifying possibleTokens) are atomic, preventing data races and ensuring consistent behavior.
 
+## Implementing scalable token bucket rate limiter using redis lua script
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"log"
+	"sync"
+	"time"
+
+	"github.com/redis/go-redis/v9"
+)
+
+// Redis connection setup
+var ctx = context.Background()
+var rdb = redis.NewClient(&redis.Options{
+	Addr: "localhost:6379", // Change to your Redis server address
+})
+
+// Lua script for atomic token consumption
+var consumeTokenScript = redis.NewScript(`
+	local tokens = redis.call("GET", KEYS[1])
+	if not tokens then
+		return -1 -- No bucket found
+	end
+	tokens = tonumber(tokens)
+	if tokens > 0 then
+		redis.call("DECR", KEYS[1]) -- Consume a token
+		return tokens - 1
+	else
+		return -2 -- No tokens available
+	end
+`)
+
+// User-specific token bucket filter
+type RedisTokenBucket struct {
+	Key         string
+	MaxTokens   int
+	RefillRate  time.Duration
+	RefillCount int
+	BurstLimit  int
+}
+
+// Initialize token bucket for a user
+func (tbf *RedisTokenBucket) InitBucket() {
+	// Set initial tokens if not already set
+	exists, err := rdb.Exists(ctx, tbf.Key).Result()
+	if err != nil {
+		log.Println("Redis error:", err)
+		return
+	}
+	if exists == 0 {
+		rdb.Set(ctx, tbf.Key, tbf.MaxTokens, 0)
+	}
+	// Start background refill goroutine
+	go tbf.refillTokens()
+}
+
+// Background job to refill tokens for each user
+func (tbf *RedisTokenBucket) refillTokens() {
+	for {
+		time.Sleep(tbf.RefillRate)
+		currentTokens, err := rdb.Get(ctx, tbf.Key).Int()
+		if err != nil {
+			log.Println("Error fetching tokens:", err)
+			continue
+		}
+
+		// Refill tokens up to max + burst limit
+		if currentTokens < tbf.MaxTokens+tbf.BurstLimit {
+			newTokens := min(tbf.MaxTokens+tbf.BurstLimit, currentTokens+tbf.RefillCount)
+			rdb.Set(ctx, tbf.Key, newTokens, 0)
+		}
+	}
+}
+
+// Consume a token for a user
+func (tbf *RedisTokenBucket) GetToken(userID string) bool {
+	result, err := consumeTokenScript.Run(ctx, rdb, []string{tbf.Key}).Int()
+	if err != nil {
+		log.Println("Redis error:", err)
+		return false
+	}
+
+	if result >= 0 {
+		fmt.Println("User", userID, "granted token at", time.Now(), "- Remaining:", result)
+		return true
+	}
+
+	fmt.Println("User", userID, "denied - No tokens available at", time.Now())
+	return false
+}
+
+// Utility function
+func min(a, b int) int {
+	if a < b {
+		return a
+	}
+	return b
+}
+
+func main() {
+	var wg sync.WaitGroup
+
+	// Different users with different rate limits
+	users := map[string]*RedisTokenBucket{
+		"user_123": {Key: "token_bucket:user_123", MaxTokens: 10, RefillRate: time.Second, RefillCount: 1, BurstLimit: 5},
+		"user_456": {Key: "token_bucket:user_456", MaxTokens: 5, RefillRate: time.Second, RefillCount: 2, BurstLimit: 3},
+	}
+
+	// Initialize token buckets for each user
+	for _, bucket := range users {
+		bucket.InitBucket()
+	}
+
+	// Simulate multiple users requesting tokens
+	for i := 1; i <= 10; i++ {
+		wg.Add(2) // Two users making requests
+
+		go func(i int) {
+			defer wg.Done()
+			users["user_123"].GetToken("user_123")
+		}(i)
+
+		go func(i int) {
+			defer wg.Done()
+			users["user_456"].GetToken("user_456")
+		}(i)
+	}
+
+	wg.Wait()
+}
+```
 
 ### Reference
 https://godoy-lucas-e.medium.com/golang-concurrency-building-a-simple-rate-limiter-token-bucket-algorithm-62de4f389039
