@@ -95,6 +95,7 @@
 - [Atomic and Once in Sync](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/02.%20SingletonDesignPattern.md)
 - [Custom Channel Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/05.%20Custom%20Channel%20Implementation.md)
 - [Custom Waitgroup Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/06.%20Custom%20Waitgroup%20Implementation.md)
+- [Custom Condn variable](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/07.%20Custom%20Condn%20Variable%20Implementation.md)
 
 ## Design Questions
 - [Token Bucket Ratelimiter](https://github.com/MeSabya/Golang/blob/main/09.%20Building%20Blocks%20of%20concurrency%20In%20Golang/000.%20SystemDesignQuestions/000%20RateLimitingAlgorithm.md)
