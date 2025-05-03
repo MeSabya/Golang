@@ -243,6 +243,32 @@ func main() {
 ```
 </details>
 
+## Why Redis Lua Scripting is Good
+
+### 1. Atomicity
+Redis executes Lua scripts atomically — the entire script runs as a single operation, without interruption.
+
+💡 This means no race conditions, even when multiple distributed services or threads access the same Redis key concurrently.
+
+✅ Problem Solved:
+If multiple nodes try to increment a counter or refill tokens at the same time, without atomic execution, they might:
+
+Over-issue tokens (exceed the limit),
+
+Step on each other’s updates.
+
+### 2. Consistency Across Distributed Nodes
+Since all instances share a centralized Redis store, they operate on a single source of truth — the Redis keys.
+
+✅ Problem Solved:
+Without a centralized store, each node would need to maintain its own rate counter — leading to inconsistencies (e.g., each node allows 100 requests, but total becomes 100 * N nodes).
+
+### 3. Performance and Latency
+Redis is in-memory and extremely fast. Lua scripts run server-side in Redis, avoiding multiple round-trips between app and Redis.
+
+✅ Problem Solved:
+Minimizes network chatter — if you did a GET, compute in app, then SET, you'd need 2+ network calls. Lua does it in 1 atomic call.
+
 ## Options for Scaling Redis in a Distributed Environment
 
 ### Option A: Standalone Redis
