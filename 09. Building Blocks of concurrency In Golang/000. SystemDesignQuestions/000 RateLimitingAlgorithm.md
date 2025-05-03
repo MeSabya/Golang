@@ -1,3 +1,5 @@
+<details>
+
 ```go
 package main
 
@@ -93,6 +95,8 @@ func main() {
 	wg.Wait()
 }
 ```
+</details>
+
 ### daemon thread is single one ..why we need to put the lock ?
 
 #### Summary of Why Lock Is Needed:
@@ -101,6 +105,8 @@ func main() {
 - Atomicity: The lock ensures that token bucket operations (checking and modifying possibleTokens) are atomic, preventing data races and ensuring consistent behavior.
 
 ## Implementing scalable token bucket rate limiter using redis lua script
+
+<details>
 
 ```go
 package main
@@ -235,6 +241,44 @@ func main() {
 	wg.Wait()
 }
 ```
+</details>
+
+## Options for Scaling Redis in a Distributed Environment
+
+### Option A: Standalone Redis
+Single Pod + PVC.
+
+Easy to deploy.
+
+Can be a single point of failure (SPOF).
+
+Use when:
+
+Your app tolerates occasional Redis downtime.
+You use Redis only for rate limiting or caching, not persistent critical data.
+
+### Option B: Redis Sentinel
+Provides failover and high availability.
+
+Needs 3 Sentinel replicas and at least 2 Redis nodes.
+
+Redis client automatically discovers the current master.
+
+Kubernetes deployment:
+Use Bitnami Helm chart with Sentinel enabled.
+
+### Option C: Redis Cluster
+Shards data across multiple Redis nodes.
+
+Provides horizontal scaling.
+
+Higher complexity, but better for very large-scale systems.
+
+Used for:
+
+Massive global rate-limiting needs.
+
+Storing lots of keys with high throughput.
 
 ### Reference
 https://godoy-lucas-e.medium.com/golang-concurrency-building-a-simple-rate-limiter-token-bucket-algorithm-62de4f389039
