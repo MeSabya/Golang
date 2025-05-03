@@ -1,4 +1,7 @@
-## Implementing old school token bucket rate limiter 
+## Implementing old school token bucket rate limiter using channel
+https://godoy-lucas-e.medium.com/golang-concurrency-building-a-simple-rate-limiter-token-bucket-algorithm-62de4f389039
+
+## Implementing old school token bucket rate limiter using cond variable and mutex 
 <details>
 
 ```go
@@ -307,6 +310,4 @@ Massive global rate-limiting needs.
 
 Storing lots of keys with high throughput.
 
-### Reference
-https://godoy-lucas-e.medium.com/golang-concurrency-building-a-simple-rate-limiter-token-bucket-algorithm-62de4f389039
-https://dev.to/jacktt/implement-rate-limit-in-golang-l4g
+
