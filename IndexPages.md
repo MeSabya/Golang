@@ -2,39 +2,43 @@
    - Conversion to and from a string
    - [string split](https://github.com/MeSabya/Golang/blob/main/01.Strings/01.%20StringBasics.md#ways-to-split-a-string-into-a-slice)
    - Indicating the index of a substring or character in a string
-   - [sort a string on golang](https://github.com/MeSabya/Golang/blob/main/01.Strings/01.%20StringBasics.md#sort-a-string-in-go)
+   - 🔥[sort a string on golang](https://github.com/MeSabya/Golang/blob/main/01.Strings/01.%20StringBasics.md#sort-a-string-in-go)
    - [Inserting Slice in a Slice](https://github.com/MeSabya/Golang/blob/main/01.Strings/04.%20Inserting%20Slice%20in%20a%20Slice.md)
 
 ## Slice 
 - [Sort Slice of Strings by Length](https://github.com/MeSabya/Golang/blob/main/000.Slice/00.%20Sort%20Slice%20of%20Strings%20by%20Length.md)
-- [Append Function in Golang](https://github.com/MeSabya/Golang/blob/main/000.Slice/01.%20Understanding%20Append%20function%20in%20slice.md)
+- 🔥[Append Function in Golang](https://github.com/MeSabya/Golang/blob/main/000.Slice/01.%20Understanding%20Append%20function%20in%20slice.md)
 - [Quizes on slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/02.%20MoreSliceQuizes.md)
-- [Can you use slice as a key in a map](https://github.com/MeSabya/Golang/blob/main/000.Slice/03.Can%20you%20use%20slice%20as%20a%20key%20in%20a%20map.md)
-- [sort.Sort vs sort.Slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/04.%20sort.Sort%20vs%20sort.Slice.md#sortsort-vs-sortslice)
+- 🔥[Can you use slice as a key in a map](https://github.com/MeSabya/Golang/blob/main/000.Slice/03.Can%20you%20use%20slice%20as%20a%20key%20in%20a%20map.md)
+- 🔥[sort.Sort vs sort.Slice](https://github.com/MeSabya/Golang/blob/main/000.Slice/04.%20sort.Sort%20vs%20sort.Slice.md#sortsort-vs-sortslice)
 - [Slice Quiz](https://github.com/MeSabya/Golang/blob/main/01.Strings/09.%20Quiz.md)
 - [Misc Questions](https://github.com/MeSabya/Golang/blob/main/01.Strings/07.%20append.md)
 - [Inserting Slice in a Slice](https://github.com/MeSabya/Golang/blob/main/01.Strings/04.%20Inserting%20Slice%20in%20a%20Slice.md)
-- 
 
+## Struct
+- 🔥[How to check for structure equality in Golang Structures](https://github.com/MeSabya/Golang/blob/main/02.%20Structs/00.%20HowToCompareTwoStructs.md)
+- [Tags in structs](https://github.com/MeSabya/Golang/blob/main/02.%20Structs/01.%20Tags%20in%20struct.md)
+  
 ## io packages (Reading and Writing)
 - [Reading Input From User](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/00.%20Reading%20Input%20From%20User.md)
 - [Analyzing Input from Keyboard](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/01.%20Analyzing%20Input%20from%20Keyboard.md)
-- [Reading from a file](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/03.%20Reading%20From%20a%20file.md)
+- 🔥[Reading from a file](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/03.%20Reading%20From%20a%20file.md)
 - [Writing to a file](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/04.%20Writing%20to%20a%20File.md)
 - [Read CSV File](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/05.%20Read%20CSV%20File.md)
-- [Bufio Vs ioutil packages in Go](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/06.%20bufio%20vs%20ioutil.md)
+- 🔥[Bufio Vs ioutil packages in Go](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/06.%20bufio%20vs%20ioutil.md)
 - [Merge a number of files where each file has sorted words in it. Write the merged output to a output file.](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/10.FileOperations%20in%20Golang%20Vs%20Python.md)
-- [bufio with strings](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/08.%20bufio%20with%20strings.md)
+- 🔥[bufio with strings](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/08.%20bufio%20with%20strings.md)
 
 ## OOPs Concepts in Go
 - [method overloading in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/02.%20Method%20Overloading%20in%20Go.md)
-- [How can you achieve code reuse and polymorphism in Go without using classical inheritance?](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/03.%20How%20can%20you%20achieve%20code%20reuse%20and%20polymorphism%20in%20Go%20without%20using%20classical%20inheritance.md)
+- 🔥[How can you achieve code reuse and polymorphism in Go without using classical inheritance?](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/03.%20How%20can%20you%20achieve%20code%20reuse%20and%20polymorphism%20in%20Go%20without%20using%20classical%20inheritance.md)
 - [TypeAssertionVsTypeSwitch](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/04.%20TypeAssertionVsTypeSwitch.md)
 
 ## Map in golang
 - [Why use empty struct as a value in a map, what is the significance?](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/00.%20Declaration%20and%20Initialization.md#why-use-empty-struct-as-a-value-in-a-map-what-is-the-significance)
-- [Comparable types in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/02.%20Comparable%20Types%20in%20Golang.md)
-- [Ordered Dict in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/01.%20Ordered%20Dict%20in%20golang.go)
+- 🔥[Comparable types in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/02.%20Comparable%20Types%20in%20Golang.md)
+- 🔥[Ordered Dict in Golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/01.%20Ordered%20Dict%20in%20golang.go)
+- 🔥[Hashmap implementation in golang](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/03.%20How%20hashmap%20is%20implemented.md) 
 
 ## Interface
 - [Interfaces on variables do not distinguish between values or pointers](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/02.%20Implementation%20of%20Interfaces.md)
@@ -43,6 +47,7 @@
 - [Make a stack using empty interface](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/06.%20Make%20a%20Stack%20with%20Variable%20Internal%20Types.md)
 - [Quiz](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/07.%20Quiz.md)
 - [Why does a nil interface not always equal nil in Go?](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/10.%20nil%20interface.md)
+- [How are interfaces implemented in Go? What is the role of the itab structure?](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/09.%20How%20are%20interfaces%20implemented%20in%20Go%3F%20What%20is%20the%20role%20of%20the%20itab%20structure.md)
 
 ## Reflect package
 - [Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
@@ -87,24 +92,24 @@
 - [Channels](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/02.%20Channels.md)
 - [Golang Closure](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/03.%20Golang%20Closure.md)
 - [Concurrency with project](https://blog.devgenius.io/concurrency-with-sample-project-in-golang-297400beb0a4)
-- [Non Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/00.%20Non%20Blocking%20Queue.md)
+- 🔥[Non Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/00.%20Non%20Blocking%20Queue.md)
 - [Semaphore Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/02.%20Semaphore.md)
-- [Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/01.%20BlockingQueue.md)
+- 🔥[Blocking Queue Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/01.%20BlockingQueue.md)
 - [Concurrent Grep in Golang](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/ConcurrentGrep.md)
 - [File system change notification](https://github.com/souvikhaldar/file-change/blob/main/main.go)
-- [Atomic and Once in Sync](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/02.%20SingletonDesignPattern.md)
-- [Custom Channel Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/05.%20Custom%20Channel%20Implementation.md)
-- [Custom Waitgroup Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/06.%20Custom%20Waitgroup%20Implementation.md)
-- [Custom Condn variable](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/07.%20Custom%20Condn%20Variable%20Implementation.md)
+- 🔥[Atomic and Once in Sync](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/02.%20SingletonDesignPattern.md)
+- 🔥[Custom Channel Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/05.%20Custom%20Channel%20Implementation.md)
+- 🔥[Custom Waitgroup Implementation](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/06.%20Custom%20Waitgroup%20Implementation.md)
+- 🔥[Custom Condn variable](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/07.%20Custom%20Condn%20Variable%20Implementation.md)
 
-## Design Questions
-- [Token Bucket Ratelimiter](https://github.com/MeSabya/Golang/blob/main/09.%20Building%20Blocks%20of%20concurrency%20In%20Golang/000.%20SystemDesignQuestions/000%20RateLimitingAlgorithm.md)
+## 🔥Design Questions
+- 🔥[Token Bucket Ratelimiter](https://github.com/MeSabya/Golang/blob/main/09.%20Building%20Blocks%20of%20concurrency%20In%20Golang/000.%20SystemDesignQuestions/000%20RateLimitingAlgorithm.md)
 - [Producer Consumer Problem with backpressure](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/05.%20Producer%20Consumer%20Problem%20with%20backpressure.md)
 - [ThreadsafeDefferredCallback](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/04.%20ThreadsafeDefferredCallback.md)
 - [Design a load balancer](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/00.%20Design%20a%20load%20balancer.md)
 - [DEsign a JSON Parser](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/03.%20Design%20a%20JsonParser.md)
 - [SOLID Principles Discussion](https://github.com/MeSabya/Golang/tree/main/17.%20DesignQuestions/00.%20SOLID%20Principles)
-- [Design a LRU Cache](https://github.com/MeSabya/Golang/blob/main/00.%20DataStructure%20and%20Algo%20in%20Golang/listInGolang.md)
+- 🔥[Design a LRU Cache](https://github.com/MeSabya/Golang/blob/main/00.%20DataStructure%20and%20Algo%20in%20Golang/listInGolang.md)
 - [Design a hash map](https://github.com/MeSabya/Golang/blob/main/07.%20Maps/03.%20How%20hashmap%20is%20implemented.md)
 
 ## Troubleshooting in Golang
@@ -130,4 +135,8 @@ Follow-up: How can you prevent goroutine leaks in the future?](https://github.co
 ## Concurrency Pattern
 - [Pipeline Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/01.%20PipelinePattern/00.%20PipelinePattern.md)
 - [Workerpool Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/00.Worker%20Pool%20Pattern.md)
+- [Worker Pool with auto scaling](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/04.%20Design%20ThreadPool.md)
 - [Fanout FanIn Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/02.%20FanoutFanin.md)
+
+## Generics
+- 🔥[LRU Cache using generics](https://github.com/MeSabya/Golang/tree/main/14.%20Generics)
