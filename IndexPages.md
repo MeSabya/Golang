@@ -50,10 +50,10 @@
 - [How are interfaces implemented in Go? What is the role of the itab structure?](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/09.%20How%20are%20interfaces%20implemented%20in%20Go%3F%20What%20is%20the%20role%20of%20the%20itab%20structure.md)
 
 ## Reflect package
-- [Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
+- 🔥[Flatten a list using reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/08.%20Flatten%20a%20list%20using%20reflect.go)
 - [Basics of Reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/04.%20ReflectPackage.md)
 - [ Printf and Reflection](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/05.%20Printf%20and%20Reflection.md)
-- [Quiz on Reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/07.%20Quiz.md)
+- 🔥[Quiz on Reflect](https://github.com/MeSabya/Golang/blob/main/03.%20InterfacesAndReflection/07.%20Quiz.md)
 
 ## Reading And Writing
 - [Reading Input From User](https://github.com/MeSabya/Golang/blob/main/05.Reading%20and%20Writing/00.%20Reading%20Input%20From%20User.md)
@@ -65,10 +65,10 @@
 
 ## Error Handling in Golang
 - [Error Handling Basics](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/00.%20Error-Handling.md)
-- [What is recover() function?](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/01.%20Run-time%20Exceptions%20and%20Panic.md#go-panicking)
+- 🔥[What is recover() function?](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/01.%20Run-time%20Exceptions%20and%20Panic.md#go-panicking)
 - [Panicking in a User-Defined Package](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/02.%20Panicking%20in%20a%20User-Defined%20Package.md)
-- [Error-Handling Scheme with Closures](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/03.%20Error-Handling%20Scheme%20with%20Closures.md)
-- [What happens if a goroutine panics](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/05.%20What%20happens%20if%20a%20goroutine%20panics.md)
+- 🔥[Error-Handling Scheme with Closures](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/03.%20Error-Handling%20Scheme%20with%20Closures.md)
+- 🔥[What happens if a goroutine panics](https://github.com/MeSabya/Golang/blob/main/06.%20ErrorHandling/05.%20What%20happens%20if%20a%20goroutine%20panics.md)
 
 ## OOPs in Golang
 - [Method Overloading in Go](https://github.com/MeSabya/Golang/blob/main/12.%20Oops/02.%20Method%20Overloading%20in%20Go.md)
@@ -77,7 +77,7 @@
 
 ## MemoryHandling
 - [Segmentation Fault](https://github.com/MeSabya/Golang/blob/main/15.%20MemoryHandlingInGo/00.SegmentationFault.md)
-- [MemoryManagement and garabage collection](https://github.com/MeSabya/Golang/blob/main/15.%20MemoryHandlingInGo/01.%20MemoryManagement%20and%20garabage%20collectionin%20Golang.md)
+- 🔥[MemoryManagement and garabage collection](https://github.com/MeSabya/Golang/blob/main/15.%20MemoryHandlingInGo/01.%20MemoryManagement%20and%20garabage%20collectionin%20Golang.md)
 
 ## Context in Golang
 - [Basics of Context and usecases](https://github.com/MeSabya/Golang/blob/main/13.%20Context%20in%20golang/00.Basics.md)
@@ -120,7 +120,7 @@
 - [Ginko Gomega basics](https://github.com/MeSabya/Golang/blob/main/21.%20UnitTestingFW/00.GinkoAndGomega/00.%20Basics.md)
 
 ## Miscellaneous questions 
-- [Merge Jsons](https://github.com/MeSabya/Golang/blob/main/10.%20Tricky%20Questions/04.%20MergeJsons.md)
+- 🔥[Merge Jsons](https://github.com/MeSabya/Golang/blob/main/10.%20Tricky%20Questions/04.%20MergeJsons.md)
 
 ## Scenario Based questions
 - [How would you implement graceful shutdown for your Go application? Can you walk through a potential implementation?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#2-graceful-shutdown-or-for-select-done-idiom)
@@ -132,7 +132,7 @@ Follow-up: Can you describe how the Go runtime handles memory management (e.g., 
 - [What could be causing the memory leak? How would you troubleshoot and fix it?
 Follow-up: How can you prevent goroutine leaks in the future?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#3-memory-management-and-goroutines)
 
-## Concurrency Pattern
+## 🔥Concurrency Pattern
 - [Pipeline Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/01.%20PipelinePattern/00.%20PipelinePattern.md)
 - [Workerpool Pattern](https://github.com/MeSabya/Golang/blob/main/04.%20GoRoutinesAndChannels/Concurrency%20Problems%20And%20Solutions/Concurrency%20Patterns/00.Worker%20Pool%20Pattern.md)
 - [Worker Pool with auto scaling](https://github.com/MeSabya/Golang/blob/main/17.%20DesignQuestions/04.%20Design%20ThreadPool.md)
