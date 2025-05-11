@@ -124,7 +124,7 @@
 
 ## Miscellaneous questions 
 - 🔥[Merge Jsons](https://github.com/MeSabya/Golang/blob/main/10.%20Tricky%20Questions/04.%20MergeJsons.md)
-
+  
 ## Scenario Based questions
 - [How would you implement graceful shutdown for your Go application? Can you walk through a potential implementation?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#2-graceful-shutdown-or-for-select-done-idiom)
 - [How would you fix the data race in this scenario? Can you demonstrate different ways to synchronize access to the shared counter?](https://github.com/MeSabya/Golang/blob/main/20.%20ScenarioBasedQuestions/01.%20Generic%20Concepts.md#10-data-race-in-goroutines)
@@ -143,3 +143,9 @@ Follow-up: How can you prevent goroutine leaks in the future?](https://github.co
 
 ## Generics
 - 🔥[LRU Cache using generics](https://github.com/MeSabya/Golang/tree/main/14.%20Generics)
+
+## Datastructure and Algo in Golang
+- [CSV Parsing concurrently](https://github.com/MeSabya/Golang/blob/main/00.%20DataStructure%20and%20Algo%20in%20Golang/CSV%20Parsing%20Concurrently.md)
+- [List in Golang]()
+- [Heap in Golang]()
+- 
