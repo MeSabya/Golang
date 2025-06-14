@@ -1,3 +1,100 @@
+```python
+import threading
+import time
+import random
+
+
+class NonBlockingQ:
+    def __init__(self, max_size):
+        self.q = []
+        self.max_size = max_size
+        self.lock = threading.Lock()
+        self.q_waiting_puts = []  # List of threading.Condition objects
+        self.q_waiting_gets = []
+
+    def enqueue(self, val):
+        with self.lock:
+            if len(self.q) == self.max_size:
+                print("Queue is Full")
+                cond = threading.Condition()
+                self.q_waiting_puts.append((cond, val))
+                return cond
+            else:
+                self.q.append(val)
+                if self.q_waiting_gets:
+                    cond = self.q_waiting_gets.pop(0)
+                    with cond:
+                        cond.notify()
+                return None
+
+    def dequeue(self):
+        with self.lock:
+            if self.q:
+                item = self.q.pop(0)
+                if self.q_waiting_puts:
+                    cond, val = self.q_waiting_puts.pop(0)
+                    with cond:
+                        self.q.append(val)
+                        cond.notify()
+                return item, None
+            else:
+                cond = threading.Condition()
+                self.q_waiting_gets.append(cond)
+                return None, cond
+
+
+def retry_enqueue(cond, val, q):
+    with cond:
+        cond.wait()
+    print("Retry Enqueue Invoked")
+    new_cond = q.enqueue(val)
+    if new_cond:
+        threading.Thread(target=retry_enqueue, args=(new_cond, val, q)).start()
+    else:
+        print(f"Item {val} successfully added on a retry")
+
+
+def retry_dequeue(cond):
+    with cond:
+        cond.wait()
+    print("Retry Dequeue Invoked, consumed item")
+
+
+def producer(q):
+    item = 1
+    while True:
+        cond = q.enqueue(item)
+        if cond:
+            threading.Thread(target=retry_enqueue, args=(cond, item, q)).start()
+        else:
+            print(f"Producer produced item {item}")
+        item += 1
+        time.sleep(random.randint(1, 3))
+
+
+def consumer(q):
+    while True:
+        item, cond = q.dequeue()
+        if cond:
+            threading.Thread(target=retry_dequeue, args=(cond,)).start()
+        else:
+            print(f"Consumer consumed item {item}")
+        time.sleep(1)
+
+
+if __name__ == "__main__":
+    q = NonBlockingQ(2)
+
+    producer_thread = threading.Thread(target=producer, args=(q,))
+    consumer_thread = threading.Thread(target=consumer, args=(q,))
+
+    producer_thread.start()
+    consumer_thread.start()
+
+    producer_thread.join()
+    consumer_thread.join()
+```
+
 ```golang
 package main
 
