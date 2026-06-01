@@ -101,6 +101,238 @@ func main() {
 ```
 </details>
 
+
+### Ratelimiting algorthm per user :The above code global rate limiter algorithm, not per user.
+
+Here's a complete single-file implementation of a per-user token bucket rate limiter using the lazy refill approach.
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+	"time"
+)
+
+type Bucket struct {
+	Tokens     float64
+	LastRefill time.Time
+}
+
+type RateLimiter struct {
+	mu sync.Mutex
+
+	capacity   float64
+	refillRate float64 // tokens per second
+
+	buckets map[string]*Bucket
+}
+
+func NewRateLimiter(capacity int, refillRate float64) *RateLimiter {
+	return &RateLimiter{
+		capacity:   float64(capacity),
+		refillRate: refillRate,
+		buckets:    make(map[string]*Bucket),
+	}
+}
+
+func (r *RateLimiter) getOrCreateBucket(user string) *Bucket {
+	bucket, ok := r.buckets[user]
+	if ok {
+		return bucket
+	}
+
+	bucket = &Bucket{
+		Tokens:     r.capacity,
+		LastRefill: time.Now(),
+	}
+
+	r.buckets[user] = bucket
+	return bucket
+}
+
+func (r *RateLimiter) refill(bucket *Bucket) {
+	now := time.Now()
+
+	elapsed := now.Sub(bucket.LastRefill).Seconds()
+
+	tokensToAdd := elapsed * r.refillRate
+
+	bucket.Tokens += tokensToAdd
+
+	if bucket.Tokens > r.capacity {
+		bucket.Tokens = r.capacity
+	}
+
+	bucket.LastRefill = now
+}
+
+func (r *RateLimiter) Allow(user string) bool {
+	r.mu.Lock()
+	defer r.mu.Unlock()
+
+	bucket := r.getOrCreateBucket(user)
+
+	r.refill(bucket)
+
+	if bucket.Tokens < 1 {
+		return false
+	}
+
+	bucket.Tokens--
+
+	return true
+}
+
+func main() {
+
+	// Capacity = 5 tokens
+	// Refill = 1 token per second
+	limiter := NewRateLimiter(5, 1)
+
+	user := "user1"
+
+	fmt.Println("Initial burst:")
+	for i := 1; i <= 10; i++ {
+		fmt.Printf(
+			"Request %d -> allowed=%v\n",
+			i,
+			limiter.Allow(user),
+		)
+	}
+
+	fmt.Println("\nSleeping 3 seconds...")
+	time.Sleep(3 * time.Second)
+
+	fmt.Println("\nAfter refill:")
+	for i := 1; i <= 5; i++ {
+		fmt.Printf(
+			"Request %d -> allowed=%v\n",
+			i,
+			limiter.Allow(user),
+		)
+	}
+}
+```
+
+### Why This Fails in a Distributed System
+
+Suppose you deploy:
+
+```
+Pod-A
+Pod-B
+Pod-C
+```
+Each pod has:
+
+map[string]*Bucket
+
+in memory.
+
+#### Problem 1: User Gets More Requests
+
+Example:
+
+Limit = 100 req/min
+
+User traffic:
+
+```
+Request 1 -> Pod-A
+Request 2 -> Pod-B
+Request 3 -> Pod-C
+```
+Each pod sees:
+
+user1 has full bucket
+
+Effectively:
+
+100 + 100 + 100=300 req/min
+
+instead of:
+
+100 req/min
+
+#### Problem 2: Pod Restart
+
+Suppose:
+
+user1 exhausted bucket
+
+Current state:
+
+Tokens = 0
+
+Pod crashes:
+
+Pod-A restarted
+
+Memory gone:
+
+map[string]*Bucket
+
+becomes:
+
+empty map
+
+User immediately gets:
+
+fresh 100 requests
+
+which violates the rate limit.
+
+#### Problem 3: Horizontal Scaling
+
+Suppose:
+
+10 replicas
+
+Now bucket state exists in:
+
+10 different places
+
+There is no coordination.
+
+Production Design
+
+Instead of:
+
+```
+Pod
+ |
+ +-- map[user]*Bucket
+
+Use:
+
+Pod-A ----\
+Pod-B ----- Redis
+Pod-C ----/
+
+Store:
+
+user1:
+    tokens=25
+    last_refill=123456789
+
+in Redis.
+```
+
+Now:
+
+```
+All pods
+↓
+Read same bucket
+↓
+Update same bucket
+```
+
+and the limit is enforced globally.
+
+
 ### daemon thread is single one ..why we need to put the lock ?
 
 #### Summary of Why Lock Is Needed:
